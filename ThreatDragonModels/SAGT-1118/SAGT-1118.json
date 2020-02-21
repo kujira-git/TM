@@ -9,7 +9,353 @@
       {
         "title": "SAGT-1118",
         "thumbnail": "./public/content/images/thumbnail.jpg",
-        "id": 0
+        "id": 0,
+        "diagramJson": {
+          "cells": [
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 69,
+                "y": 446
+              },
+              "angle": 0,
+              "id": "80b475b7-e7dc-43a8-a634-faedc6884992",
+              "z": 1,
+              "hasOpenThreats": true,
+              "outOfScope": false,
+              "threats": [
+                {
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Information disclosure",
+                  "title": "Cookie Usage Violation",
+                  "description": "Apart of RGR, services are not allowed to extract easy_id from Rz-cookie.",
+                  "mitigation": "Extract from Rp only."
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Browser"
+                },
+                ".element-text": {
+                  "class": "element-text hasOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 97,
+                "y": 93
+              },
+              "angle": 0,
+              "id": "667b7746-e704-4a96-abe4-f5286f5eb72f",
+              "z": 2,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "API Gateway"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "80b475b7-e7dc-43a8-a634-faedc6884992"
+              },
+              "target": {
+                "id": "667b7746-e704-4a96-abe4-f5286f5eb72f"
+              },
+              "vertices": [],
+              "id": "dce3e73d-347f-4f6b-8eb5-fee88ec8afa5",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "GET request",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 3,
+              "hasOpenThreats": false,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "443",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 426,
+                "y": 293
+              },
+              "angle": 0,
+              "id": "cf2385e4-5d9c-486e-a851-30328232fda0",
+              "z": 4,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "AutoComplete\nAPI"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "667b7746-e704-4a96-abe4-f5286f5eb72f"
+              },
+              "target": {
+                "id": "cf2385e4-5d9c-486e-a851-30328232fda0"
+              },
+              "vertices": [
+                {
+                  "x": 518,
+                  "y": 142
+                }
+              ],
+              "id": "0aa77444-8f9d-4286-abf3-cd00abfa460f",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.5165113636166891,
+                    "offset": -4.485351121135351
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "GET request",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 5,
+              "hasOpenThreats": false,
+              "protocol": "80",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 827,
+                "y": 31
+              },
+              "angle": 0,
+              "id": "a1adef90-4911-4170-a6fb-ce252eaba613",
+              "z": 6,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "CAP Server"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "cf2385e4-5d9c-486e-a851-30328232fda0"
+              },
+              "target": {
+                "id": "a1adef90-4911-4170-a6fb-ce252eaba613"
+              },
+              "vertices": [
+                {
+                  "x": 737,
+                  "y": 156
+                }
+              ],
+              "id": "df14ed85-37ad-47ed-824f-58d949117d9b",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "POST request",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 7,
+              "hasOpenThreats": false,
+              "protocol": "80",
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Store",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 955,
+                "y": 347
+              },
+              "angle": 0,
+              "id": "6b5a03f7-ba8f-4496-a2b5-a0eb56a84a85",
+              "z": 8,
+              "hasOpenThreats": false,
+              "outOfScope": true,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isOutOfScope"
+                },
+                "text": {
+                  "text": "Kafka RAT"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "a1adef90-4911-4170-a6fb-ce252eaba613"
+              },
+              "target": {
+                "id": "6b5a03f7-ba8f-4496-a2b5-a0eb56a84a85"
+              },
+              "vertices": [],
+              "id": "339b4ef5-ca49-49ed-805f-f48863685e93",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "suggest data",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 9,
+              "hasOpenThreats": false,
+              "outOfScope": true,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isOutOfScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 135,
+                "y": 14
+              },
+              "target": {
+                "x": 959,
+                "y": 489
+              },
+              "vertices": [
+                {
+                  "x": 44,
+                  "y": 194
+                },
+                {
+                  "x": 219,
+                  "y": 327
+                },
+                {
+                  "x": 351,
+                  "y": 399
+                },
+                {
+                  "x": 379,
+                  "y": 413
+                },
+                {
+                  "x": 465,
+                  "y": 462
+                },
+                {
+                  "x": 680,
+                  "y": 520
+                }
+              ],
+              "id": "17e58d64-c755-439c-9fe7-54b6ab557693",
+              "z": 10,
+              "attrs": {}
+            }
+          ]
+        },
+        "size": {
+          "height": 600.300537109375,
+          "width": 1154
+        }
       }
     ]
   }
